@@ -54,6 +54,11 @@
     <Compile Include="Assets\Scripts\CollapseController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\ScannedRocks\BonusShaders\Old\SnowOnRockShader.shader" />
+    <None Include="Assets\LoafbrrAssets\MInesAndCaveSet\README.txt" />
+    <None Include="Assets\ScannedRocks\BonusShaders\New\OnTheTopShader.shader" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.51f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
       <Private>False</Private>

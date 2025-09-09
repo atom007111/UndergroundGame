@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 2460048442276544069}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.0000008046627, z: -0, w: 1}
-  m_LocalPosition: {x: -1.125, y: 3, z: 0}
-  m_LocalScale: {x: 1.25, y: 0.5, z: 0.4}
+  m_LocalPosition: {x: -1.1249989, y: 3, z: -0.21428753}
+  m_LocalScale: {x: 1.25, y: 0.5, z: 0.575}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7855074709573813586}
@@ -79,14 +79,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2811367871754975685}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 14, y: 1, z: 7}
-  m_LocalScale: {x: 4, y: 1, z: 10}
+  m_LocalScale: {x: 4, y: 1, z: 7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3018918866245858577}
   - {fileID: 8913823730464017196}
   - {fileID: 2659322296383212332}
+  - {fileID: 7992314703002637833}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &3213091219373202870
@@ -122,11 +123,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3cd44d93157f94fa38cefcfa5f8f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rockPrefab: {fileID: 0}
+  rockPrefab: {fileID: 7070959807010797166, guid: cf79c94214712bd4bb008f525ce70730, type: 3}
   blockPrefab: {fileID: 174201162566113751, guid: 370ebdadd66099c46b0e0a190df130ca, type: 3}
   collapseSpawnPoints:
   - {fileID: 3018918866245858577}
   - {fileID: 2659322296383212332}
+  blockSpawnPoint: {fileID: 7992314703002637833}
   triggerDelay: 0.5
   blockDelay: 2
 --- !u!1 &4788832886170906858
@@ -182,6 +184,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7666173126185961451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7992314703002637833}
+  m_Layer: 0
+  m_Name: BlockSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7992314703002637833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7666173126185961451}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.750001, y: 0.9999919, z: 0.07142733}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7855074709573813586}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8394940092998391221
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,8 +242,8 @@ Transform:
   m_GameObject: {fileID: 8394940092998391221}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.0000008046627, z: -0, w: 1}
-  m_LocalPosition: {x: -1.125, y: 0, z: -0.0000013172627}
-  m_LocalScale: {x: 1.25, y: 1, z: 0.4}
+  m_LocalPosition: {x: -1.1249989, y: 0, z: -0.21428756}
+  m_LocalScale: {x: 1.25, y: 1, z: 0.575}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7855074709573813586}
@@ -253,5 +286,6 @@ MonoBehaviour:
   collapseSpawnPoints:
   - {fileID: 3018918866245858577}
   - {fileID: 2659322296383212332}
+  blockSpawnPoint: {fileID: 0}
   triggerDelay: 0.5
   blockDelay: 2
