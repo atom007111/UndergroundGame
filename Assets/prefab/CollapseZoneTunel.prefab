@@ -68,13 +68,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3cd44d93157f94fa38cefcfa5f8f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rockPrefab: {fileID: 7070959807010797166, guid: cf79c94214712bd4bb008f525ce70730, type: 3}
   blockPrefab: {fileID: 6970137487886407127, guid: 9ada9af999de45047ac5434650046f14, type: 3}
-  collapseSpawnPoints:
-  - {fileID: 3706735485024273087}
   blockSpawnPoint: {fileID: 3533635078049527192}
   triggerDelay: 0.5
   blockDelay: 2
+  rockPrefabs:
+  - {fileID: 100000, guid: 97c84535eba233240afe865339172b2a, type: 3}
+  - {fileID: 100000, guid: 0accc090d90ee2f449a22ea618c7bf96, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  rockSpawnPoints: []
 --- !u!1 &4694791174427549844
 GameObject:
   m_ObjectHideFlags: 0

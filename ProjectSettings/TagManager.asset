@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Cieling
+  - Ceiling
+  - Rock
   layers:
   - Default
   - TransparentFX
