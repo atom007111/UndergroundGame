@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class CollapseController : MonoBehaviour
 {
     [Header("Collapse Settings")]
+    public GameObject player;
     public GameObject blockPrefab;      // prefab that seals the cave
     public Transform blockSpawnPoint;
     public float triggerDelay = 0.5f;   // delay before rocks fall
@@ -16,6 +17,8 @@ public class CollapseController : MonoBehaviour
 
     private List<Rigidbody> rocks = new List<Rigidbody>();
     private bool hasCollapsed = false;
+    
+    private bool playerInside;
 
     private void Start()
     {
@@ -25,7 +28,7 @@ public class CollapseController : MonoBehaviour
             if (rockPrefabs.Length == 0 || point == null) continue;
 
             int index = Random.Range(0, rockPrefabs.Length);
-            GameObject rock = Instantiate(rockPrefabs[index], point.position, point.rotation); 
+            GameObject rock = Instantiate(rockPrefabs[index], point.position, point.rotation);
             rock.transform.localScale = rockPrefabs[index].transform.localScale; // copy prefab scale
             if (rockSpawnsParent != null)
                 rock.transform.SetParent(rockSpawnsParent, true);
@@ -49,7 +52,18 @@ public class CollapseController : MonoBehaviour
         if (other.CompareTag("Player")) // only players trigger collapse
         {
             hasCollapsed = true;
+            playerInside = true;
             StartCoroutine(TriggerCollapse());
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player")) // only players trigger collapse
+        {
+            playerInside = true;
+        } else
+        {
+            playerInside = false;
         }
     }
 
@@ -84,6 +98,15 @@ public class CollapseController : MonoBehaviour
         {
             GameObject blockInstance = Instantiate(blockPrefab, blockSpawnPoint.position, blockSpawnPoint.rotation);
             blockInstance.transform.SetParent(transform, true); // now the instance is parented
+            foreach (Rigidbody rb in rocks)
+            {
+                if (rb != null)
+                    Destroy(rb.gameObject);
+            }
+            rocks.Clear();
+            if (playerInside && player != null)
+                Destroy(player);
+
         }
 
         // disable trigger so it doesn’t fire again
